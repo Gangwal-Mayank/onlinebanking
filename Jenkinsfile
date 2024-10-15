@@ -27,7 +27,7 @@ spec:
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'mvn clean install'
+                sh 'mvn clean install -DskipTests'
             }
         }
         stage('Test') {
