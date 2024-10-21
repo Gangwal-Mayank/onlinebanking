@@ -24,6 +24,21 @@ spec:
         }
     }
     stages {
+
+                stage('Checkout SCM') {
+            steps {
+                // Checkout branches matching the pattern **/test/*
+                script {
+                    def branchSpec = '**/test/*'
+                    checkout([$class: 'GitSCM',
+                              branches: [[name: branchSpec]],
+                              userRemoteConfigs: [[url: 'https://github.com/Gangwal-Mayank/onlinebanking.git']]
+                    ])
+                }
+            }
+        }
+        
+        
         stage('Build') {
             steps {
                 echo 'Building...'
