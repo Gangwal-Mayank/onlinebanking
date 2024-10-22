@@ -24,7 +24,7 @@ spec:
         }
     }
     triggers {
-        pollSCM('H/1 * * * *') // Poll for changes every minute
+        pollSCM('* * * * *') // Poll for changes every minute
     }
 
     stages {
