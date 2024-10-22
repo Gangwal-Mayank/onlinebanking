@@ -24,11 +24,6 @@ spec:
         }
     }
     
-
-    triggers {
-        pollSCM('H/1 * * * *') // Poll for changes every minute
-    }
-
     stages {
 
                 stage('Checkout SCM') {
